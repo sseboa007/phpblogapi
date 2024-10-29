@@ -1,0 +1,2 @@
+Rewriteengine On
+RewriteRule . index.php
