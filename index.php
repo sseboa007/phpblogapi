@@ -8,6 +8,11 @@
     set_error_handler("ErrorHandler::handleError");
     set_exception_handler("ErrorHandler::handleException");
 
+    header('Access-Control-Allow-Origin: *'); 
+    header("Access-Control-Allow-Credentials: true");
+    header('Access-Control-Max-Age: 1000');
+    header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token , Authorization');
+
     header('Content-Type: application/json; charset=UTF-8');
 
     $parts = explode("/", $_SERVER["REQUEST_URI"]);
