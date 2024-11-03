@@ -56,12 +56,15 @@
                         break;
                     }
 
-                    $id = $this->service->update($data, $blog, $decodedToken->sub);
+                    $this->service->update($data, $blog, $decodedToken->sub);
 
                     echo json_encode(["id" => $blog["BlogId"]]);
                     break;
 
                 case "DELETE":
+                    $this->service->delete($blog["BlogId"]);
+
+                    echo json_encode(["id" => $blog["BlogId"]]);
                     break;
 
                 default:

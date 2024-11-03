@@ -127,5 +127,20 @@
 
             $stmt->execute();
         }
+
+        public function delete($blogId) {
+            $sql = "
+                DELETE FROM
+                    $this->table
+                WHERE
+                    BlogId = :blogId
+            ";
+
+            $stmt = $this->conn->prepare($sql);
+
+            $stmt->bindValue(":blogId", $blogId, PDO::PARAM_INT);
+
+            $stmt->execute();
+        }
     }
 ?>
